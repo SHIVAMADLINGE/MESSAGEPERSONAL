@@ -15,6 +15,9 @@ io.on('connection', (socket) => {
   });
 });
 
-http.listen(3000, '0.0.0.0', () => {
-    console.log('Server is running on port 3000 and accessible on the network');
+// This tells the app: Use the environment port OR 3000 if none exists
+const PORT = process.env.PORT || 3000;
+
+http.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
